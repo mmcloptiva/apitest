@@ -1,0 +1,710 @@
+<wsdl:definitions
+    xmlns:accountnsv1_0="http://soap.crmapi.util.redknee.com/accounts/xsd/Accounts-v1.0"
+    xmlns:accountnsv1_1="http://soap.crmapi.util.redknee.com/accounts/xsd/Accounts-v1.1"
+    xmlns:accountnsv2_0="http://soap.crmapi.util.redknee.com/accounts/xsd/Accounts-v2.0"
+    xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+    xmlns:exns="http://soap.crmapi.util.redknee.com/common/exception/xsd/2008/08"
+    xmlns:tns="http://soap.crmapi.util.redknee.com/accounts/Accounts-v2.0"
+    xmlns:commonnsv1_1="http://soap.crmapi.util.redknee.com/common/xsd/Common-v1.1"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:accountnsv1_2="http://soap.crmapi.util.redknee.com/accounts/xsd/Accounts-v1.2"
+    xmlns:commonns="http://soap.crmapi.util.redknee.com/common/xsd/Common-v2.0"
+    xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+    targetNamespace="http://soap.crmapi.util.redknee.com/accounts/Accounts-v2.0">
+    <wsdl:documentation>Accounts API 2.0 for CRMAPI Version 3.0 on January 19,
+        2011</wsdl:documentation>
+    <!--<wsdl:import namespace="http://soap.crmapi.util.redknee.com/accounts/xsd/Accounts-v1.0"
+        location="AccountService?wsdl=Accounts_interface_1_0.wsdl"> </wsdl:import>
+    <wsdl:import namespace="http://soap.crmapi.util.redknee.com/accounts/xsd/Accounts-v1.1"
+        location="AccountService?wsdl=Accounts_interface_1_1.wsdl"> </wsdl:import>
+    <wsdl:import namespace="http://soap.crmapi.util.redknee.com/accounts/xsd/Accounts-v2.0"
+        location="AccountService?wsdl=Accounts_interface_2_0.wsdl"> </wsdl:import>
+    <wsdl:import namespace="http://soap.crmapi.util.redknee.com/common/xsd/Common-v1.1"
+        location="AccountService?wsdl=Common_interface_1_1.wsdl"> </wsdl:import>
+    <wsdl:import namespace="http://soap.crmapi.util.redknee.com/common/xsd/Common-v2.0"
+        location="AccountService?wsdl=Common_interface_2_0.wsdl"> </wsdl:import>
+    <wsdl:import namespace="http://soap.crmapi.util.redknee.com/accounts/xsd/Accounts-v1.2"
+        location="AccountService?wsdl=Accounts_interface_1_2.wsdl"> </wsdl:import>
+    <wsdl:import namespace="http://soap.crmapi.util.redknee.com/common/exception/xsd/2008/08"
+        location="AccountService?wsdl=Common_faults_1_0.wsdl"> </wsdl:import>-->
+    <wsdl:portType name="AccountsPortType_v2_0">
+        <wsdl:operation name="listAccountCreationTemplates">
+            <wsdl:input message="accountnsv2_0:listAccountCreationTemplatesMessage"
+                wsaw:Action="urn:listAccountCreationTemplates"> </wsdl:input>
+            <wsdl:output message="accountnsv2_0:listAccountCreationTemplatesResponse"> </wsdl:output>
+            <wsdl:fault name="CRMException" message="exns:CRMExceptionFault"> </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getAccountProfile">
+            <wsdl:input message="accountnsv2_0:getAccountProfileMessage"
+                wsaw:Action="urn:getAccountProfile"> </wsdl:input>
+            <wsdl:output message="accountnsv2_0:getAccountProfileResponse"> </wsdl:output>
+            <wsdl:fault name="CRMException" message="exns:CRMExceptionFault"> </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="createAccount">
+            <wsdl:input message="accountnsv2_0:createAccountMessage" wsaw:Action="urn:createAccount"> </wsdl:input>
+            <wsdl:output message="accountnsv2_0:createAccountResponse"> </wsdl:output>
+            <wsdl:fault name="CRMException" message="exns:CRMExceptionFault"> </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="createIndividualSubscriber">
+            <wsdl:input message="accountnsv2_0:createIndividualSubscriberMessage"
+                wsaw:Action="urn:createIndividualSubscriber"> </wsdl:input>
+            <wsdl:output message="accountnsv2_0:createIndividualSubscriberResponse"> </wsdl:output>
+            <wsdl:fault name="CRMException" message="exns:CRMExceptionFault"> </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="updateAccountProfile">
+            <wsdl:input message="accountnsv2_0:updateAccountProfileMessage"
+                wsaw:Action="urn:updateAccountProfile"> </wsdl:input>
+            <wsdl:output message="commonnsv1_1:successfulResponse"> </wsdl:output>
+            <wsdl:fault name="CRMException" message="exns:CRMExceptionFault"> </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="deleteAccount">
+            <wsdl:input message="accountnsv2_0:deleteAccountMessage" wsaw:Action="urn:deleteAccount"> </wsdl:input>
+            <wsdl:output message="commonnsv1_1:successfulResponse"> </wsdl:output>
+            <wsdl:fault name="CRMException" message="exns:CRMExceptionFault"> </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="updateAccountState">
+            <wsdl:input message="accountnsv2_0:updateAccountStateMessage"
+                wsaw:Action="urn:updateAccountState"> </wsdl:input>
+            <wsdl:output message="commonnsv1_1:successfulResponse"> </wsdl:output>
+            <wsdl:fault name="CRMException" message="exns:CRMExceptionFault"> </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="updateAccountParent">
+            <wsdl:input message="accountnsv2_0:updateAccountParentMessage"
+                wsaw:Action="urn:updateAccountParent"> </wsdl:input>
+            <wsdl:output message="commonnsv1_1:successfulResponse"> </wsdl:output>
+            <wsdl:fault name="CRMException" message="exns:CRMExceptionFault"> </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="updateAccountBillCycle">
+            <wsdl:input message="accountnsv2_0:updateAccountBillCycleMessage"
+                wsaw:Action="urn:updateAccountBillCycle"> </wsdl:input>
+            <wsdl:output message="accountnsv2_0:updateAccountBillCycleResponse"> </wsdl:output>
+            <wsdl:fault name="CRMException" message="exns:CRMExceptionFault"> </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="updateAccountVPNMobileNumber">
+            <wsdl:input message="accountnsv2_0:updateAccountVPNMobileNumberMessage"
+                wsaw:Action="urn:updateAccountVPNMobileNumber"> </wsdl:input>
+            <wsdl:output message="commonnsv1_1:successfulResponse"> </wsdl:output>
+            <wsdl:fault name="CRMException" message="exns:CRMExceptionFault"> </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getAccountAgedDebt">
+            <wsdl:input message="accountnsv2_0:getAccountAgedDebtMessage"
+                wsaw:Action="urn:getAccountAgedDebt"> </wsdl:input>
+            <wsdl:output message="accountnsv2_0:getAccountAgedDebtResponse"> </wsdl:output>
+            <wsdl:fault name="CRMException" message="exns:CRMExceptionFault"> </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getAccountBillCycleActivity">
+            <wsdl:input message="accountnsv2_0:getAccountBillCycleActivityMessage"
+                wsaw:Action="urn:getAccountBillCycleActivity"> </wsdl:input>
+            <wsdl:output message="accountnsv2_0:getAccountBillCycleActivityResponse"> </wsdl:output>
+            <wsdl:fault name="CRMException" message="exns:CRMExceptionFault"> </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="acquireMobileNumber">
+            <wsdl:input message="accountnsv2_0:acquireMobileNumberMessage"
+                wsaw:Action="urn:acquireMobileNumber"> </wsdl:input>
+            <wsdl:output message="commonnsv1_1:successfulResponse"> </wsdl:output>
+            <wsdl:fault name="CRMException" message="exns:CRMExceptionFault"> </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="releaseMobileNumber">
+            <wsdl:input message="accountnsv2_0:releaseMobileNumberMessage"
+                wsaw:Action="urn:releaseMobileNumber"> </wsdl:input>
+            <wsdl:output message="commonnsv1_1:successfulResponse"> </wsdl:output>
+            <wsdl:fault name="CRMException" message="exns:CRMExceptionFault"> </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="updateAccountConvertSystemTypeToHybrid">
+            <wsdl:input message="accountnsv2_0:updateAccountConvertSystemTypeToHybridMessage"
+                wsaw:Action="urn:updateAccountConvertSystemTypeToHybrid"> </wsdl:input>
+            <wsdl:output message="accountnsv2_0:updateAccountConvertSystemTypeToHybridResponse"> </wsdl:output>
+            <wsdl:fault name="CRMException" message="exns:CRMExceptionFault"> </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="updateAccountConvertSystemTypeHybridToPrepaid">
+            <wsdl:input message="accountnsv2_0:updateAccountConvertSystemTypeHybridToPrepaidMessage"
+                wsaw:Action="urn:updateAccountConvertSystemTypeHybridToPrepaid"> </wsdl:input>
+            <wsdl:output
+                message="accountnsv2_0:updateAccountConvertSystemTypeHybridToPrepaidResponse"> </wsdl:output>
+            <wsdl:fault name="CRMException" message="exns:CRMExceptionFault"> </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="updateAccountConvertSystemTypeHybridToPostpaid">
+            <wsdl:input
+                message="accountnsv2_0:updateAccountConvertSystemTypeHybridToPostpaidMessage"
+                wsaw:Action="urn:updateAccountConvertSystemTypeHybridToPostpaid"> </wsdl:input>
+            <wsdl:output
+                message="accountnsv2_0:updateAccountConvertSystemTypeHybridToPostpaidResponse"> </wsdl:output>
+            <wsdl:fault name="CRMException" message="exns:CRMExceptionFault"> </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="listSubAccounts">
+            <wsdl:input message="accountnsv2_0:listSubAccountsMessage"
+                wsaw:Action="urn:listSubAccounts"> </wsdl:input>
+            <wsdl:output message="accountnsv2_0:listSubAccountsResponse"> </wsdl:output>
+            <wsdl:fault name="CRMException" message="exns:CRMExceptionFault"> </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getAccountBalance">
+            <wsdl:input message="accountnsv2_0:getAccountBalanceMessage"
+                wsaw:Action="urn:getAccountBalance"> </wsdl:input>
+            <wsdl:output message="accountnsv1_0:getAccountBalanceResponse"> </wsdl:output>
+            <wsdl:fault name="CRMException" message="exns:CRMExceptionFault"> </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getDetailedAccountBalances">
+            <wsdl:input message="accountnsv2_0:getDetailedAccountBalancesMessage"
+                wsaw:Action="urn:getDetailedAccountBalances"> </wsdl:input>
+            <wsdl:output message="accountnsv1_1:getDetailedAccountBalancesResponse"> </wsdl:output>
+            <wsdl:fault name="CRMException" message="exns:CRMExceptionFault"> </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="listAccountRoles">
+            <wsdl:input message="accountnsv2_0:listAccountRolesMessage"
+                wsaw:Action="urn:listAccountRoles"> </wsdl:input>
+            <wsdl:output message="accountnsv1_0:listAccountRolesResponse"> </wsdl:output>
+            <wsdl:fault name="CRMException" message="exns:CRMExceptionFault"> </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="listAccountTypes">
+            <wsdl:input message="accountnsv2_0:listAccountTypesMessage"
+                wsaw:Action="urn:listAccountTypes"> </wsdl:input>
+            <wsdl:output message="accountnsv2_0:listAccountTypesResponse"> </wsdl:output>
+            <wsdl:fault name="CRMException" message="exns:CRMExceptionFault"> </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="updateAccountAddExtension">
+            <wsdl:input message="accountnsv2_0:updateAccountAddExtensionMessage"
+                wsaw:Action="urn:updateAccountAddExtension"> </wsdl:input>
+            <wsdl:output message="accountnsv1_1:updateAccountAddExtensionResponse"> </wsdl:output>
+            <wsdl:fault name="CRMException" message="exns:CRMExceptionFault"> </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="listAccountExtensions">
+            <wsdl:input message="accountnsv2_0:listAccountExtensionsMessage"
+                wsaw:Action="urn:listAccountExtensions"> </wsdl:input>
+            <wsdl:output message="accountnsv1_1:listAccountExtensionsResponse"> </wsdl:output>
+            <wsdl:fault name="CRMException" message="exns:CRMExceptionFault"> </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getAccountExtension">
+            <wsdl:input message="accountnsv2_0:getAccountExtensionMessage"
+                wsaw:Action="urn:getAccountExtension"> </wsdl:input>
+            <wsdl:output message="accountnsv2_0:getAccountExtensionResponse"> </wsdl:output>
+            <wsdl:fault name="CRMException" message="exns:CRMExceptionFault"> </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="listDetailedAccountExtensions">
+            <wsdl:input message="accountnsv2_0:listDetailedAccountExtensionsMessage"
+                wsaw:Action="urn:listDetailedAccountExtensions"> </wsdl:input>
+            <wsdl:output message="accountnsv2_0:listDetailedAccountExtensionsResponse"> </wsdl:output>
+            <wsdl:fault name="CRMException" message="exns:CRMExceptionFault"> </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="updateAccountExtension">
+            <wsdl:input message="accountnsv2_0:updateAccountExtensionMessage"
+                wsaw:Action="urn:updateAccountExtension"> </wsdl:input>
+            <wsdl:output message="commonnsv1_1:successfulResponse"> </wsdl:output>
+            <wsdl:fault name="CRMException" message="exns:CRMExceptionFault"> </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="updateAccountRemoveExtension">
+            <wsdl:input message="accountnsv2_0:updateAccountRemoveExtensionMessage"
+                wsaw:Action="urn:updateAccountRemoveExtension"> </wsdl:input>
+            <wsdl:output message="commonnsv1_1:successfulResponse"> </wsdl:output>
+            <wsdl:fault name="CRMException" message="exns:CRMExceptionFault"> </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="initiateDirectDebit">
+            <wsdl:input message="accountnsv2_0:initiateDirectDebitMessage"
+                wsaw:Action="urn:initiateDirectDebit"> </wsdl:input>
+            <wsdl:output message="accountnsv2_0:initiateDirectDebitResponse"> </wsdl:output>
+            <wsdl:fault name="CRMException" message="exns:CRMExceptionFault"> </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="executeAccountBalanceQuery">
+            <wsdl:input message="accountnsv2_0:executeAccountBalanceQueryMessage"
+                wsaw:Action="urn:executeAccountBalanceQuery"> </wsdl:input>
+            <wsdl:output message="commonns:executeResultResponse"> </wsdl:output>
+            <wsdl:fault name="CRMException" message="exns:CRMExceptionFault"> </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="updateAccountWithStateTransition">
+            <wsdl:input message="accountnsv2_0:updateAccountWithStateTransitionMessage"
+                wsaw:Action="urn:updateAccountWithStateTransition"> </wsdl:input>
+            <wsdl:output message="accountnsv2_0:updateAccountWithStateTransitionResponse"> </wsdl:output>
+            <wsdl:fault name="CRMException" message="exns:CRMExceptionFault"> </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="listAccountsForID">
+            <wsdl:input message="accountnsv2_0:listAccountsForIDMessage"
+                wsaw:Action="urn:listAccountsForID"> </wsdl:input>
+            <wsdl:output message="accountnsv2_0:listAccountsForIDResponse"> </wsdl:output>
+            <wsdl:fault name="CRMException" message="exns:CRMExceptionFault"> </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="updateAccountParentV2">
+            <wsdl:input message="accountnsv2_0:updateAccountParentV2Message"
+                wsaw:Action="urn:updateAccountParentV2"> </wsdl:input>
+            <wsdl:output message="accountnsv2_0:updateAccountParentV2Response"> </wsdl:output>
+            <wsdl:fault name="CRMException" message="exns:CRMExceptionFault"> </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getAccountProfileV2">
+            <wsdl:input message="accountnsv2_0:getAccountProfileV2Message"
+                wsaw:Action="urn:getAccountProfileV2"> </wsdl:input>
+            <wsdl:output message="accountnsv2_0:getAccountProfileV2Response"> </wsdl:output>
+            <wsdl:fault name="CRMException" message="exns:CRMExceptionFault"> </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getAccountCug">
+            <wsdl:input message="accountnsv2_0:getAccountCugMessage" wsaw:Action="urn:getAccountCug"> </wsdl:input>
+            <wsdl:output message="accountnsv2_0:getAccountCugResponse"> </wsdl:output>
+            <wsdl:fault name="CRMException" message="exns:CRMExceptionFault"> </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="convertIndividualToGroup">
+            <wsdl:input message="accountnsv2_0:convertIndividualToGroupMessage"
+                wsaw:Action="urn:convertIndividualToGroup"> </wsdl:input>
+            <wsdl:output message="accountnsv2_0:convertIndividualToGroupResponse"> </wsdl:output>
+            <wsdl:fault name="CRMException" message="exns:CRMExceptionFault"> </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="convertBillingType">
+            <wsdl:input message="accountnsv2_0:convertBillingTypeMessage"
+                wsaw:Action="urn:convertBillingType"> </wsdl:input>
+            <wsdl:output message="accountnsv2_0:convertBillingTypeResponse"> </wsdl:output>
+            <wsdl:fault name="CRMException" message="exns:CRMExceptionFault"> </wsdl:fault>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="Accounts_v2_0_SOAP11Binding" type="tns:AccountsPortType_v2_0">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="listAccountCreationTemplates">
+            <soap:operation soapAction="urn:listAccountCreationTemplates" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="CRMException">
+                <soap:fault name="CRMException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getAccountProfile">
+            <soap:operation soapAction="urn:getAccountProfile" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="CRMException">
+                <soap:fault name="CRMException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="createAccount">
+            <soap:operation soapAction="urn:createAccount" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="CRMException">
+                <soap:fault name="CRMException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="createIndividualSubscriber">
+            <soap:operation soapAction="urn:createIndividualSubscriber" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="CRMException">
+                <soap:fault name="CRMException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="updateAccountProfile">
+            <soap:operation soapAction="urn:updateAccountProfile" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="CRMException">
+                <soap:fault name="CRMException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="deleteAccount">
+            <soap:operation soapAction="urn:deleteAccount" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="CRMException">
+                <soap:fault name="CRMException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="updateAccountState">
+            <soap:operation soapAction="urn:updateAccountState" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="CRMException">
+                <soap:fault name="CRMException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="updateAccountParent">
+            <soap:operation soapAction="urn:updateAccountParent" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="CRMException">
+                <soap:fault name="CRMException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="updateAccountBillCycle">
+            <soap:operation soapAction="urn:updateAccountBillCycle" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="CRMException">
+                <soap:fault name="CRMException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="updateAccountVPNMobileNumber">
+            <soap:operation soapAction="urn:updateAccountVPNMobileNumber" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="CRMException">
+                <soap:fault name="CRMException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getAccountAgedDebt">
+            <soap:operation soapAction="urn:getAccountAgedDebt" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="CRMException">
+                <soap:fault name="CRMException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getAccountBillCycleActivity">
+            <soap:operation soapAction="urn:getAccountBillCycleActivity" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="CRMException">
+                <soap:fault name="CRMException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="acquireMobileNumber">
+            <soap:operation soapAction="urn:acquireMobileNumber" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="CRMException">
+                <soap:fault name="CRMException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="releaseMobileNumber">
+            <soap:operation soapAction="urn:releaseMobileNumber" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="CRMException">
+                <soap:fault name="CRMException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="updateAccountConvertSystemTypeToHybrid">
+            <soap:operation soapAction="urn:updateAccountConvertSystemTypeToHybrid" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="CRMException">
+                <soap:fault name="CRMException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="updateAccountConvertSystemTypeHybridToPrepaid">
+            <soap:operation soapAction="urn:updateAccountConvertSystemTypeHybridToPrepaid"
+                style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="CRMException">
+                <soap:fault name="CRMException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="updateAccountConvertSystemTypeHybridToPostpaid">
+            <soap:operation soapAction="urn:updateAccountConvertSystemTypeHybridToPostpaid"
+                style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="CRMException">
+                <soap:fault name="CRMException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="listSubAccounts">
+            <soap:operation soapAction="urn:listSubAccounts" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="CRMException">
+                <soap:fault name="CRMException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getAccountBalance">
+            <soap:operation soapAction="urn:getAccountBalance" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="CRMException">
+                <soap:fault name="CRMException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getDetailedAccountBalances">
+            <soap:operation soapAction="urn:getDetailedAccountBalances" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="CRMException">
+                <soap:fault name="CRMException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="listAccountRoles">
+            <soap:operation soapAction="urn:listAccountRoles" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="CRMException">
+                <soap:fault name="CRMException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="listAccountTypes">
+            <soap:operation soapAction="urn:listAccountTypes" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="CRMException">
+                <soap:fault name="CRMException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="updateAccountAddExtension">
+            <soap:operation soapAction="urn:updateAccountAddExtension" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="CRMException">
+                <soap:fault name="CRMException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="listAccountExtensions">
+            <soap:operation soapAction="urn:listAccountExtensions" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="CRMException">
+                <soap:fault name="CRMException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getAccountExtension">
+            <soap:operation soapAction="urn:getAccountExtension" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="CRMException">
+                <soap:fault name="CRMException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="listDetailedAccountExtensions">
+            <soap:operation soapAction="urn:listDetailedAccountExtensions" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="CRMException">
+                <soap:fault name="CRMException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="updateAccountExtension">
+            <soap:operation soapAction="urn:updateAccountExtension" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="CRMException">
+                <soap:fault name="CRMException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="updateAccountRemoveExtension">
+            <soap:operation soapAction="urn:updateAccountRemoveExtension" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="CRMException">
+                <soap:fault name="CRMException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="initiateDirectDebit">
+            <soap:operation soapAction="urn:initiateDirectDebit" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="CRMException">
+                <soap:fault name="CRMException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="executeAccountBalanceQuery">
+            <soap:operation soapAction="urn:executeAccountBalanceQuery" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="CRMException">
+                <soap:fault name="CRMException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="updateAccountWithStateTransition">
+            <soap:operation soapAction="urn:updateAccountWithStateTransition" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="CRMException">
+                <soap:fault name="CRMException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="listAccountsForID">
+            <soap:operation soapAction="urn:listAccountsForIDs" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="CRMException">
+                <soap:fault name="CRMException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="updateAccountParentV2">
+            <soap:operation soapAction="urn:updateAccountParentV2" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="CRMException">
+                <soap:fault name="CRMException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getAccountProfileV2">
+            <soap:operation soapAction="urn:getAccountProfileV2" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="CRMException">
+                <soap:fault name="CRMException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getAccountCug">
+            <soap:operation soapAction="urn:getAccountCug" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="CRMException">
+                <soap:fault name="CRMException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="convertIndividualToGroup">
+            <soap:operation soapAction="urn:convertIndividualToGroup" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="CRMException">
+                <soap:fault name="CRMException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="convertBillingType">
+            <soap:operation soapAction="urn:convertBillingType" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="CRMException">
+                <soap:fault name="CRMException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="AccountService">
+        <wsdl:port name="AccountsSOAP11port_http" binding="tns:Accounts_v2_0_SOAP11Binding">
+            <soap:address
+                location="http://10.214.130.76:11648/RedkneeSoap_v3_0/services/AccountService/"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>
