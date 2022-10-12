@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map>
+    <title>CRM API</title>
+    <topicref href="Accounts/Accounts.html" format="html" keys="accounts"/>
+    <topicref href="BundleQuery/BundleQuery.html" format="html" keys="BundleQuery"/>
+    <topicref href="CallDetails/CallDetails.html" format="html" keys="CallDetails"/>
+    <topicref href="CallingGroups/CallingGroups.html" format="html" keys="CallingGroups"/>
+    <topicref href="CardPackages/CardPackages.html" format="html" keys="CardPackages"/>
+    <topicref href="CommandInteraction/CommandInteraction.html" format="html"
+        keys="CommandInteraction"/>
+</map>
