@@ -2912,7 +2912,7 @@ components:
         product:
           title: ""
           type: array
-          items:
+          item:
             $ref: "#/components/schemas/ProductRef"
         receiver:
           allOf:
@@ -2920,8 +2920,8 @@ components:
             - title: Identifier for the user/customer/entity that receives the
                 transfer when it is required to indicate additional customer
                 hierarchy information regarding the entity receiving the balance
-                transfer Structure including at least attributes â€œroleâ€ and
-                â€œnameâ€
+                transfer Structure including at least attributes role and
+                name.
         receiverBucket:
           allOf:
             - $ref: "#/components/schemas/BucketRef"
@@ -2959,7 +2959,7 @@ components:
                 transfer action.This can be used to indicate the identifier of
                 an agent that performs the operation on behalf of a user via a
                 customer service channel Structure including at least attributes
-                â€œroleâ€ and â€œnameâ€
+                role and name.
         status:
           allOf:
             - $ref: "#/components/schemas/ActionStatusType"
@@ -3712,8 +3712,7 @@ components:
           type: string
         payload:
           allOf:
-            - $ref: "#/components/schemas/BillingAccountAttributeValueChangeEventPa\
-                yload"
+            - $ref: "#/components/schemas/BillingAccountAttributeValueChangeEventPayload"
             - title: The event payload linked to the involved resource object
     BillingAccountAttributeValueChangeEventPayload:
       description: The event data structure
@@ -5865,8 +5864,7 @@ components:
           type: string
         payload:
           allOf:
-            - $ref: "#/components/schemas/FinancialAccountAttributeValueChangeEvent\
-                Payload"
+            - $ref: "#/components/schemas/FinancialAccountAttributeValueChangeEvent\Payload"
             - title: The event payload linked to the involved resource object
     FinancialAccountAttributeValueChangeEventPayload:
       description: The event data structure
@@ -6885,7 +6883,7 @@ components:
       type: object
       properties:
         isFavouriteLanguage:
-          title: A â€œtrueâ€ value specifies whether the language is considered by the
+          title: A true value specifies whether the language is considered by the
             individual as his favourite one
           type: boolean
         languageCode:
@@ -7150,8 +7148,7 @@ components:
           type: string
         event:
           allOf:
-            - $ref: "#/components/schemas/OrganizationAttributeValueChangeEventPayl\
-                oad"
+            - $ref: "#/components/schemas/OrganizationAttributeValueChangeEventPayload"
             - title: The event payload linked to the involved resource object
     OrganizationAttributeValueChangeEventPayload:
       description: The event data structure
@@ -7887,8 +7884,7 @@ components:
           type: string
         payload:
           allOf:
-            - $ref: "#/components/schemas/PartyAccountAttributeValueChangeEventPayl\
-                oad"
+            - $ref: "#/components/schemas/PartyAccountAttributeValueChangeEventPayload"
             - title: The event payload linked to the involved resource object
     PartyAccountAttributeValueChangeEventPayload:
       description: The event data structure
@@ -8718,8 +8714,7 @@ components:
           type: string
         event:
           allOf:
-            - $ref: "#/components/schemas/PaymentMethodAttributeValueChangeEventPay\
-                load"
+            - $ref: "#/components/schemas/PaymentMethodAttributeValueChangeEventPayload"
             - title: The event payload linked to the involved resource object
     PaymentMethodAttributeValueChangeEventPayload:
       description: The event data structure
@@ -9795,8 +9790,7 @@ components:
           type: string
         payload:
           allOf:
-            - $ref: "#/components/schemas/SettlementAccountAttributeValueChangeEven\
-                tPayload"
+            - $ref: "#/components/schemas/SettlementAccountAttributeValueChangeEventPayload"
             - title: The event payload linked to the involved resource object
     SettlementAccountAttributeValueChangeEventPayload:
       description: The event data structure
@@ -10097,7 +10091,7 @@ components:
     TaxExemptionCertificate:
       description: A tax exemption certificate represents a tax exemption granted to a
         party (individual or organization) by a tax jurisdiction which may be a
-        city, state, country,... An exemption has a certificate identifier
+        city, state, country. An exemption has a certificate identifier
         (received from the jurisdiction that levied the tax) and a validity
         period. An exemption is per tax types and determines for each type of
         tax what portion of the tax is exempted (partial by percentage or
@@ -10814,8 +10808,8 @@ components:
             - title: Identifier for the user/customer/entity that receives the
                 transfer when it is required to indicate additional customer
                 hierarchy information regarding the entity receiving the balance
-                transfer Structure including at least attributes â€œroleâ€ and
-                â€œnameâ€
+                transfer Structure including at least attributes role and
+                name.
         receiverBucket:
           allOf:
             - $ref: "#/components/schemas/BucketRef"
@@ -10983,8 +10977,8 @@ components:
             - title: Identifier for the user/customer/entity that receives the
                 transfer when it is required to indicate additional customer
                 hierarchy information regarding the entity receiving the balance
-                transfer Structure including at least attributes â€œroleâ€ and
-                â€œnameâ€
+                transfer Structure including at least attributes role and
+                name.
         receiverBucket:
           allOf:
             - $ref: "#/components/schemas/BucketRef"
@@ -11203,8 +11197,8 @@ components:
             - title: Identifier for the user/customer/entity that receives the
                 transfer when it is required to indicate additional customer
                 hierarchy information regarding the entity receiving the balance
-                transfer Structure including at least attributes â€œroleâ€ and
-                â€œnameâ€
+                transfer Structure including at least attributes role and
+                name.
         receiverBucket:
           allOf:
             - $ref: "#/components/schemas/BucketRef"
